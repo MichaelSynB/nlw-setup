@@ -1,0 +1,125 @@
+* { /* seletor universal */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #09090A;
+  color: white;
+
+  height: 100vh;
+}
+
+header {
+  display: flex; /* Colocando elemento ao lado do outro */
+  align-items: center; /* Centralizar no eixo, na linha */
+  justify-content: space-between; /* Pegará toda a largura do header,  vai justificar o conteúdo, e colocar espaço entre os elementos dentro do header*/
+
+  padding: 48px;
+
+  position: fixed;
+  width: 100%;
+  background-color: #09090A;
+}
+
+/* lê-se -> body | selecione todos os elementos dentro do body */
+button {
+  /* O botão, por padrão, tem um dislay inline */
+  padding: 16px 24px; /* 16px em cima e 16px em baixo | 24px nas laterais*/
+  border-radius: 8px;
+  border: 1px solid #8b5cf6;
+  background-color: transparent;
+  color: white;
+
+  display: flex; /* Elementos dentros do botão ficam flexíveis */
+  align-items: center; /* Só existe quando eu uso o display flex */
+  gap: 12px; /* Espaço entre elementos | Elementos: img e texto do button */
+
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+#form-habits {
+  display: flex;
+
+  /* 182px */
+  padding: 181.974px 48px 48px; /* 0 em cima/baixo 48px laterais*/
+  width: fit-content; /* encaixe o conteúdo na largura */
+}
+
+/* Contém cada um dos habit dentro */
+.habits {
+  margin-top: 60px; /* Jogando todos os itens habit para baixo */
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px; /* Um espaço de 24px entre eles */
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px; /* Cada um dos emojis é como se fosse um fonte*/
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days {
+  display: flex;
+  gap: 48px; /* Espaço entre as caixas day dentro da caixa days que engloba todo os days */
+  margin-left: 32px; /* Espaço margem esquerda   */
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.day div {
+  margin-bottom: 8px;
+
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  line-height: 125%;
+
+  color: #A1A1AA;
+  text-align: center; /* Alinhar o texto ao centro da caixa */
+}
+
+input {
+  appearance: none; /* Tirando a a aparência para poder colocar uma borda */
+  -webkit-apperance: none; /* Essa prop vai funcionar no afari, chrome, vendor prefix  alguns navegadores precisam ser declados dessa forma se não, não entendem*/
+
+
+  width: 64px;
+  height: 64px;
+
+  border: 2px solid #27272A;
+  border-radius: 8px;
+
+  background: #18181B;
+}
+
+/* Quando o input checkbox estiver marcado */
+/* Pseudo-selector*/
+input:checked {
+  background: #8b5cf6;
+  border: 2px solid #A78BFA;
+}
+
+/* Se o meu dispositivo tiver de 0 até no máximo 570px, aplique isto: */
+@media (max-width: 570px) {
+  /* Faz com que a div dentro de button com o texto desapareça */
+  button div {
+    display: none;
+  }
+  /* Quando a tela for maior do que 570px,  o texto reaparece*/
+}
+/* Responsividade  */
